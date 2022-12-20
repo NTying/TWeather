@@ -9,6 +9,7 @@ import androidx.viewbinding.ViewBinding;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -30,6 +31,7 @@ import com.tying.tweather.databinding.ActivityMainBinding;
 import com.tying.tweather.databinding.ActivityWeatherBinding;
 import com.tying.tweather.gson.Forecast;
 import com.tying.tweather.gson.Weather;
+import com.tying.tweather.service.AutoUpdateService;
 import com.tying.tweather.util.HttpUtils;
 import com.tying.tweather.util.JsonUtility;
 
@@ -181,6 +183,8 @@ public class WeatherActivity extends AppCompatActivity{
         binding.suggestionLayout.sportText.setText(sport);
 
         binding.weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
    }
 
    private void loadBingPic() {
