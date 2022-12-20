@@ -1,13 +1,10 @@
 package com.tying.tweather.domain;
 
 import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
 import org.litepal.exceptions.DataSupportException;
 
-public class City extends DataSupportException {
-
-    public City(String errorMessage) {
-        super(errorMessage);
-    }
+public class City extends LitePalSupport {
 
     @Column(unique = true, nullable = true)
     private int id;

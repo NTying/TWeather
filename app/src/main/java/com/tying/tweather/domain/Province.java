@@ -1,13 +1,10 @@
 package com.tying.tweather.domain;
 
 import org.litepal.annotation.Column;
+import org.litepal.crud.LitePalSupport;
 import org.litepal.exceptions.DataSupportException;
 
-public class Province extends DataSupportException {
-
-    public Province(String errorMessage) {
-        super(errorMessage);
-    }
+public class Province extends LitePalSupport {
 
     @Column(unique = true, nullable = false)
     private int id;
